@@ -71,7 +71,6 @@ install -p  -D -m 0644 %SOURCE9 %buildroot/usr/bin/pg_createconfig_patroni
 %config(noreplace) %patroni_confdir/config.yml.in
 %config(noreplace) %patroni_confdir/dcs.yml
 %_initrddir/%name
-/bin/*
 /usr/bin/*
 %_unitdir/%name.service
 %_unitdir/%{name}@.service
