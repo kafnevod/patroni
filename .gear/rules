@@ -1,0 +1,7 @@
+tar: v@version@:.
+#diff: v@version@:. patches/alt-fix:.
+copy: *.yml
+copy: *.yml.in
+copy: *.init
+copy: *.service
+
