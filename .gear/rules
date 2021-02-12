@@ -4,4 +4,4 @@ copy: *.yml
 copy: *.yml.in
 copy: *.init
 copy: *.service
-
+copy: *.sh

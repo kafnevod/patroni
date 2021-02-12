@@ -46,11 +46,11 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 
 set 
 set -x
-install -p -D -m 0644 patroni.sh %buildroot/usr/bin/patroni
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
 install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
+install -p -D -m 0644 %SOURCE6 %buildroot/usr/bin/patroni
 
 %pre
 
