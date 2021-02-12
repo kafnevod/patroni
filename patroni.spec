@@ -47,7 +47,7 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 %setup
 
 %build
-%python3_build
+#%python3_build
 
 %install
 
