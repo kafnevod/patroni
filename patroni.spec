@@ -21,6 +21,9 @@ Source5: %{name}@.service
 # Source6: usr
 
 
+BuildArch: noarch
+
+# BuildRequires: python-devel
 
 BuildRequires: python3 python3-module-psycopg2 python3-module-yaml 
 
@@ -34,13 +37,15 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 
 
 %prep
-%setup
+%setup -n %name-%version
 
 %build
+%python3_build
 
 
 %install
-# install -p -D -m 0644 %name %buildroot/usr/lib/python3/dist-packages/%name
+%python3_install
+# install -p -D -m 0644 %name %buildrootpython_sitelibdir/%name
 
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/%name.cfg
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/%name.cfg
