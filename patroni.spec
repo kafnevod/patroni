@@ -18,7 +18,10 @@ Source2: dcs.yml
 Source3: %name.init
 Source4: %name.service
 Source5: %{name}@.service
-Source6: ./usr/bin
+Source6: usr_bin_patroni_aws.py
+Source7: usr_bin_patronictl.py
+Source8: usr_bin_patroni_wale_restore.py
+Source9: usr_bin_pg_createconfig_patroni.sh
 
 
 BuildArch: noarch
@@ -52,7 +55,10 @@ install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
 install -p -D -m 0644 %SOURCE3 %buildroot%_initrddir/%name
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
 install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
-install -p -d -D -m 0644 %SOURCE6 %buildroot/usr/bin/
+install -p  -D -m 0644 %SOURCE6 %buildroot/usr/bin/
+install -p  -D -m 0644 %SOURCE7 %buildroot/usr/bin/
+install -p  -D -m 0644 %SOURCE7 %buildroot/usr/bin/
+install -p  -D -m 0644 %SOURCE9 %buildroot/usr/bin/
 
 %pre
 
