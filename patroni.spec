@@ -18,7 +18,6 @@ Source2: dcs.yml
 Source3: %name.init
 Source4: %name.service
 Source5: %{name}@.service
-# Source6: usr
 
 
 BuildArch: noarch
@@ -40,19 +39,14 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 %setup -n %name-%version
 
 %build
-%python3_build
 
 
 %install
-%python3_install
-# install -p -D -m 0644 %name %buildrootpython_sitelibdir/%name
-
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/%name.cfg
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/%name.cfg
 install -D -m 0755 %SOURCE3 %buildroot%_initrddir/patroni
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
 install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
-install -d -D -m 0755 %SOURCE6 %buildroot%_bindir 
 
 %pre
 
