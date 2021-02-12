@@ -26,7 +26,7 @@ Source8: usr_bin_patroni_wale_restore.py
 Source9: usr_bin_pg_createconfig_patroni.sh
 Source10: usr_bin_patroni_patroni.py
 
-BuildRequires(pre): rpm-build-python3
+#BuildRequires(pre): rpm-build-python3
 BuildRequires: python3-dev python3-module-setuptools
 
 BuildArch: noarch
@@ -47,14 +47,12 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 %setup
 
 %build
-#%python3_build
 
 %install
 
 #set 
 set -x
 ls -lR
-#%python3_install
 mkdir -p %buildroot%python3_sitelibdir
 cp -r patroni %buildroot%python3_sitelibdir
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
