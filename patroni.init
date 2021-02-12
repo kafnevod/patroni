@@ -29,14 +29,6 @@ POSTGRES_VERSION=""
 
 . /lib/lsb/init-functions
 
-# Loading this library for get_versions() function
-if test ! -e /usr/share/postgresql-common/init.d-functions; then
-  log_failure_msg "Probably postgresql-common does not installed."
-  exit 1
-else
-  . /usr/share/postgresql-common/init.d-functions
-fi
-
 # Is there Patroni executable?
 if test ! -e $PATRONI; then
   log_failure_msg "Patroni executable $PATRONI does not exist."

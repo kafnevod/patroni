@@ -22,6 +22,7 @@ Source6: usr_bin_patroni_aws.py
 Source7: usr_bin_patronictl.py
 Source8: usr_bin_patroni_wale_restore.py
 Source9: usr_bin_pg_createconfig_patroni.sh
+Source10: usr_bin_patroni_patroni.py
 
 BuildArch: noarch
 
@@ -57,6 +58,7 @@ install -p  -D -m 0644 %SOURCE6 %buildroot/usr/bin/patroni_aws
 install -p  -D -m 0644 %SOURCE7 %buildroot/usr/bin/patronictl
 install -p  -D -m 0644 %SOURCE7 %buildroot/usr/bin/patroni_wale_restore
 install -p  -D -m 0644 %SOURCE9 %buildroot/usr/bin/pg_createconfig_patroni
+install -p  -D -m 0644 %SOURCE10 %buildroot/usr/bin/patroni
 
 %pre
 
