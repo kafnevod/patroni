@@ -54,7 +54,9 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 #set 
 set -x
 ls -lR
-%python3_install
+#%python3_install
+mkdir -p %buildroot%python3_sitelibdir
+cp -r patroni %buildroot%python3_sitelibdir
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
