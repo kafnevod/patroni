@@ -18,7 +18,7 @@ Source2: dcs.yml
 Source3: %name.init
 Source4: %name.service
 Source5: %{name}@.service
-Source6: usr
+# Source6: usr
 
 
 
@@ -40,7 +40,7 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 
 
 %install
-install -p -D -m 0644 %name %buildroot/usr/lib/python3/dist-packages/%name
+# install -p -D -m 0644 %name %buildroot/usr/lib/python3/dist-packages/%name
 
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/%name.cfg
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/%name.cfg
