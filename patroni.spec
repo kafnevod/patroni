@@ -7,7 +7,7 @@ Name: patroni
 Version: 2.0.1
 Release: alt1
 
-%setup_python_module $name
+#%setup_python_module $name
 
 Summary: Patroni is a template to create high-availability Postgres Cluster
 License: GPLv2+
@@ -33,7 +33,7 @@ BuildArch: noarch
 
 # BuildRequires: python-devel
 
-i#BuildRequires: python3 python3-module-psycopg2 python3-module-yaml 
+#BuildRequires: python3 python3-module-psycopg2 python3-module-yaml 
 
 %description
 Patroni is a template for you to create your own customized, high-availability solution using Python and - 
