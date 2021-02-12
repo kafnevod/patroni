@@ -43,9 +43,10 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 
 %install
 
+
+install -p -D -m 0644 usr_bin_patroni %buildroot/usr/bin/patroni
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
-install -D -m 0755 %SOURCE3 %buildroot%_initrddir/patroni
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
 install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
 
@@ -62,6 +63,7 @@ install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
 %config(noreplace) %patroni_confdir/config.yml.in
 %config(noreplace) %patroni_confdir/dcs.yml
 %_initrddir/%name
+/usr/bin/*
 %_unitdir/%name.service
 %_unitdir/%{name}@.service
 
