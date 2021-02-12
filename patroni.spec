@@ -49,7 +49,7 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 #set 
 set -x
 ls -lR
-install -p -D -d -m 0644 patroni %buildroot/usr/lib/python3/site-packages/
+install -p -D -d -m 0755 patroni %buildroot/usr/lib/python3/site-packages/
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
