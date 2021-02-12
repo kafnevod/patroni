@@ -42,8 +42,9 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 
 
 %install
-install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/%name.cfg
-install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/%name.cfg
+
+install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
+install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
 install -D -m 0755 %SOURCE3 %buildroot%_initrddir/patroni
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
 install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
@@ -63,9 +64,6 @@ install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
 %_initrddir/%name
 %_unitdir/%name.service
 %_unitdir/%{name}@.service
-%_bindir/usr/
-%_bindir/*
-%_man1dir/*
 
 %changelog
 * Fri Feb 12 2021 Alexey Kostarev <kaf@altlinux.org> 2.0.1-alt1
