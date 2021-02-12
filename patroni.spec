@@ -18,6 +18,7 @@ Source2: dcs.yml
 Source3: %name.init
 Source4: %name.service
 Source5: %{name}@.service
+Source6: usrbinpatroni
 
 
 BuildArch: noarch
@@ -43,8 +44,9 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 
 %install
 
-
-install -p -D -m 0644 usr_bin_patroni %buildroot/usr/bin/patroni
+set 
+set -x
+install -p -D -m 0644 usrbinpatroni %buildroot/usr/bin/patroni
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
