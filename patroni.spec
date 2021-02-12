@@ -26,6 +26,9 @@ Source8: usr_bin_patroni_wale_restore.py
 Source9: usr_bin_pg_createconfig_patroni.sh
 Source10: usr_bin_patroni_patroni.py
 
+BuildRequires(pre): rpm-build-python3
+BuildRequires: python3-dev python3-module-setuptools
+
 BuildArch: noarch
 
 # BuildRequires: python-devel
