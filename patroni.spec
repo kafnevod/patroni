@@ -75,7 +75,7 @@ install -p  -D -m 0644 %SOURCE10 %buildroot/usr/bin/patroni
 /usr/bin/*
 %_unitdir/%name.service
 %_unitdir/%{name}@.service
-
+/usr/lib/python3/site-packages/%name
 %changelog
 * Fri Feb 12 2021 Alexey Kostarev <kaf@altlinux.org> 2.0.1-alt1
 - 2.0.1
