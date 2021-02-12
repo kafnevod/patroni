@@ -1,6 +1,7 @@
 %define patroni_user    postgres
 %define patroni_group   postgres
 %define patroni_confdir %_sysconfdir/%name
+%define patroni_home %patroni_confdir
 
 Name: patroni
 Version: 2.0.1
@@ -76,5 +77,7 @@ install -D -m 0755 %SOURCE6 %buildroot/usr/usr
 
 %changelog
 * Fri Feb 12 2021 Alexey Kostarev <kaf@altlinux.org> 2.0.1-alt1
-- 
+- 2.0.1
+
+
 
