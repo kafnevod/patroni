@@ -65,7 +65,7 @@ install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
 %config(noreplace) %patroni_confdir/config.yml.in
 %config(noreplace) %patroni_confdir/dcs.yml
 %_initrddir/%name
-/usr/bin/*
+/usr/bin/patroni
 %_unitdir/%name.service
 %_unitdir/%{name}@.service
 
