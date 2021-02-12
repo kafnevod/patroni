@@ -41,16 +41,17 @@ We call Patroni a 'template' because it is far from being a one-size-fits-all or
 It will have its own caveats. Use wisely. There are many ways to run high availability with PostgreSQL; for a list, see the PostgreSQL Documentation.
 
 %prep
-%setup -n %name-%version
+%setup
 
 %build
-
+%python3_build
 
 %install
 
 #set 
 set -x
 ls -lR
+%python3_install
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
@@ -79,7 +80,9 @@ ls -lR %buildroot
 /usr/bin/*
 %_unitdir/%name.service
 %_unitdir/%{name}@.service
-/usr/lib/python3/site-packages/%name
+%python3_sitelibdir/%name/
+%python3_sitelibdir/*.egg-info
+
 %changelog
 * Fri Feb 12 2021 Alexey Kostarev <kaf@altlinux.org> 2.0.1-alt1
 - 2.0.1
