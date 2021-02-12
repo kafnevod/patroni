@@ -27,13 +27,13 @@ Source9: usr_bin_pg_createconfig_patroni.sh
 Source10: usr_bin_patroni_patroni.py
 
 #BuildRequires(pre): rpm-build-python3
-BuildRequires: python3-dev python3-module-setuptools
+#BuildRequires: python3-dev python3-module-setuptools
 
 BuildArch: noarch
 
 # BuildRequires: python-devel
 
-BuildRequires: python3 python3-module-psycopg2 python3-module-yaml 
+i#BuildRequires: python3 python3-module-psycopg2 python3-module-yaml 
 
 %description
 Patroni is a template for you to create your own customized, high-availability solution using Python and - 
