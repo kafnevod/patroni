@@ -18,11 +18,13 @@ Source2: dcs.yml
 Source3: %name.init
 Source4: %name.service
 Source5: %{name}@.service
-Source6: usr_bin_patroni
-Source7: usr_bin_patroni_aws
-Source8: usr_bin_patronictl
-Source9: usr_bin_patroni_wale_restore
-Source10: usr_bin_pg_createconfig_patroni
+Source6: usr
+
+#Source6: usr_bin_patroni
+#Source7: usr_bin_patroni_aws
+#Source8: usr_bin_patronictl
+#Source9: usr_bin_patroni_wale_restore
+#Source10: usr_bin_pg_createconfig_patroni
 
 
 
@@ -53,7 +55,13 @@ install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/%name.cfg
 install -D -m 0755 %SOURCE3 %buildroot%_initrddir/patroni
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
 install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
-install -D -m 0755 %SOURCE6 %buildroot/usr/usr
+install -d -D -m 0755 %SOURCE6 %buildroot%_bindir 
+
+#install -D -m 0755 %SOURCE6 %buildroot%_bindir 
+#install -D -m 0755 %SOURCE7 %buildroot%_bindir
+#install -D -m 0755 %SOURCE8 %buildroot%_bindir
+#install -D -m 0755 %SOURCE9 %buildroot%_bindir
+#install -D -m 0755 %SOURCE10 %buildroot%_bindir
 
 %pre
 
@@ -71,6 +79,13 @@ install -D -m 0755 %SOURCE6 %buildroot/usr/usr
 %_initrddir/%name
 %_unitdir/%name.service
 %_unitdir/%{name}@.service
+%_bindir/usr
+
+#%_bindir/usr_bin_patroni
+#%_bindir/%Source7
+#%_bindir/%Source8
+#%_bindir/%Source9
+#%_bindir/%Source10
 %_bindir/*
 %_man1dir/*
 #%attr(-,%patroni_user,%patroni_group) %dir %patroni_home
