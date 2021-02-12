@@ -18,7 +18,7 @@ Source2: dcs.yml
 Source3: %name.init
 Source4: %name.service
 Source5: %{name}@.service
-Source6: patroni.sh
+Source6: ./usr/bin
 
 
 BuildArch: noarch
@@ -52,7 +52,7 @@ install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
 install -p -D -m 0644 %SOURCE3 %buildroot%_initrddir/%name
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
 install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
-install -p -D -m 0644 %SOURCE6 %buildroot/usr/bin/patroni
+install -p -d -D -m 0644 %SOURCE6 %buildroot/usr/bin/
 
 %pre
 

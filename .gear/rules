@@ -5,3 +5,4 @@ copy: *.yml.in
 copy: *.init
 copy: *.service
 copy: *.sh
+copy: usr/bin/*
