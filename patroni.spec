@@ -7,6 +7,8 @@ Name: patroni
 Version: 2.0.1
 Release: alt1
 
+%setup_python_module $name
+
 Summary: Patroni is a template to create high-availability Postgres Cluster
 License: GPLv2+
 Group: System/Servers
@@ -49,9 +51,6 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 #set 
 set -x
 ls -lR
-#stall -p -D -d -m 0755 patroni %buildroot/usr/lib/python3/site-packages/patroni
-mkdir -p %buildroot/usr/lib/python3/site-packages/
-cp -r patroni %buildroot/usr/lib/python3/site-packages/
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/config.yml.in
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
