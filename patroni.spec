@@ -57,7 +57,6 @@ install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
 %preun_service patroni
 
 %files
-%doc CHANGELOG LICENSE README ROADMAP doc/architecture.txt doc/configuration.txt doc/intro.txt doc/management.txt doc/proxy-protocol.txt examples/*.cfg
 %dir %patroni_confdir
 %config(noreplace) %patroni_confdir/config.yml.in
 %config(noreplace) %patroni_confdir/dcs.yml
