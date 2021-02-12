@@ -84,7 +84,6 @@ ls -lR %buildroot
 %_unitdir/%name.service
 %_unitdir/%{name}@.service
 %python3_sitelibdir/%name/
-%python3_sitelibdir/*.egg-info
 
 %changelog
 * Fri Feb 12 2021 Alexey Kostarev <kaf@altlinux.org> 2.0.1-alt1
