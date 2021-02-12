@@ -23,7 +23,6 @@ Source7: usr_bin_patronictl.py
 Source8: usr_bin_patroni_wale_restore.py
 Source9: usr_bin_pg_createconfig_patroni.sh
 
-
 BuildArch: noarch
 
 # BuildRequires: python-devel
@@ -37,7 +36,6 @@ Database engineers, DBAs, DevOps engineers, and SREs who are looking to quickly 
 
 We call Patroni a 'template' because it is far from being a one-size-fits-all or plug-and-play replication system. 
 It will have its own caveats. Use wisely. There are many ways to run high availability with PostgreSQL; for a list, see the PostgreSQL Documentation.
-
 
 %prep
 %setup -n %name-%version
@@ -55,10 +53,10 @@ install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/dcs.yml
 install -p -D -m 0644 %SOURCE3 %buildroot%_initrddir/%name
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
 install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
-install -p  -D -m 0644 %SOURCE6 %buildroot/usr/bin/
-install -p  -D -m 0644 %SOURCE7 %buildroot/usr/bin/
-install -p  -D -m 0644 %SOURCE7 %buildroot/usr/bin/
-install -p  -D -m 0644 %SOURCE9 %buildroot/usr/bin/
+install -p  -D -m 0644 %SOURCE6 %buildroot/usr/bin/patroni_aws
+install -p  -D -m 0644 %SOURCE7 %buildroot/usr/bin/patronictl
+install -p  -D -m 0644 %SOURCE7 %buildroot/usr/bin/patroni_wale_restore
+install -p  -D -m 0644 %SOURCE9 %buildroot/usr/bin/pg_createconfig_patroni
 
 %pre
 
