@@ -37,6 +37,9 @@ Group: Development/Python3
 # No real need in python-base in this package
 %filter_from_requires /^python-base/d
 
+%description tools
+This package contains several tools included with Python 3
+
 %prep
 %setup
 
