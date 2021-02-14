@@ -14,7 +14,7 @@ Group: Databases
 URL: https://patroni.readthedocs.io/en/latest/
 Source: %name-%version.tar
 
-%setup_python3_module %oname
+%setup_python3_module %name
 
 BuildArch: noarch
 
