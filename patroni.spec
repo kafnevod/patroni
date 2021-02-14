@@ -17,6 +17,7 @@ Source: %name-%version.tar
 
 BuildArch: noarch
 
+BuildRequires: python-base
 
 %description
 Patroni is a template for you to create your own customized, high-availability solution using Python and - 
