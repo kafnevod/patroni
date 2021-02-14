@@ -32,6 +32,8 @@ We call Patroni a 'template' because it is far from being a one-size-fits-all or
 It will have its own caveats. Use wisely. There are many ways to run high availability with PostgreSQL; for a list, see the PostgreSQL Documentation.
 
 %package tools
+Summary: A collection of tools included with Python 3
+Group: Development/Python3
 # No real need in python-base in this package
 %filter_from_requires /^python-base/d
 
