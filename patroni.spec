@@ -16,8 +16,6 @@ Source: %name-%version.tar
 
 BuildArch: noarch
 
-Requires: python-base
-
 BuildRequires(pre): rpm-build-python3 rpm-build-python3dist
 
 BuildRequires: python3 python-base
