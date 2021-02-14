@@ -31,6 +31,10 @@ Database engineers, DBAs, DevOps engineers, and SREs who are looking to quickly 
 We call Patroni a 'template' because it is far from being a one-size-fits-all or plug-and-play replication system. 
 It will have its own caveats. Use wisely. There are many ways to run high availability with PostgreSQL; for a list, see the PostgreSQL Documentation.
 
+%package tools
+# No real need in python-base in this package
+%filter_from_requires /^python-base/d
+
 %prep
 %setup
 
