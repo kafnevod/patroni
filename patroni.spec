@@ -13,6 +13,16 @@ Group: Databases
 
 URL: https://patroni.readthedocs.io/en/latest/
 Source: %name-%version.tar
+Source1: config.yml.in
+Source2: dcs.yml
+Source3: %name.init
+Source4: %name.service
+Source5: %{name}@.service
+Source6: usr_bin_patroni_aws.py
+Source7: usr_bin_patronictl.py
+Source8: usr_bin_patroni_patroni.py
+Source9: usr_bin_patroni_wale_restore.py
+
 
 BuildArch: noarch
 
@@ -56,9 +66,17 @@ This package contains several tools included with Python 3
 
 #set 
 #set -x
-ls -lR
-mkdir -p %buildroot%python3_sitelibdir
-cp -r patroni %buildroot%python3_sitelibdir
+#mkdir -p %buildroot%python3_sitelibdir
+#cp -r patroni %buildroot%python3_sitelibdir
+install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/%name.cfg
+install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/%name.cfg
+install -D -m 0755 %SOURCE3 %buildroot%_initrddir/patroni
+install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
+install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
+install -p -D -m 0644 %SOURCE6 %_bindir/aws
+install -p -D -m 0644 %SOURCE7 %_bindir/patronictl
+install -p -D -m 0644 %SOURCE8 %_bindir/patroni_patroni
+install -p -D -m 0644 %SOURCE9 %_bindir/atroni_wale_restore
 
 %pre
 
