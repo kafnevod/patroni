@@ -49,9 +49,9 @@ This package contains several tools included with Python 3
 %setup
 
 %build
+%python3_build
 
 %install
-%python_build
 
 #set 
 set -x
