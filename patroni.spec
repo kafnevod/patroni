@@ -2,7 +2,6 @@
 %define patroni_group   postgres
 %define patroni_confdir %_sysconfdir/%name
 %define patroni_home %patroni_confdir
-%define python3_sitelibdir /usr/lib/python3/site-packages/
 
 Name: patroni
 Version: 2.0.1
@@ -17,7 +16,12 @@ Source: %name-%version.tar
 
 BuildArch: noarch
 
-BuildRequires: python-base
+Requires: python-base
+
+BuildRequires(pre): rpm-build-python3 rpm-build-python3dist
+
+BuildRequires: python3 python-base
+
 
 %description
 Patroni is a template for you to create your own customized, high-availability solution using Python and - 
@@ -33,6 +37,7 @@ It will have its own caveats. Use wisely. There are many ways to run high availa
 %build
 
 %install
+%python_build
 
 #set 
 set -x
