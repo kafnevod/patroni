@@ -9,16 +9,18 @@ Release: alt1
 
 Summary: Patroni is a template to create high-availability Postgres Cluster
 License: GPLv2+
-Group: System/Servers
+Group: Databases
 
 URL: https://patroni.readthedocs.io/en/latest/
 Source: %name-%version.tar
 
+%setup_python3_module %oname
+
 BuildArch: noarch
 
-BuildRequires(pre): rpm-build-python3 rpm-build-python3dist
+BuildRequires(pre): rpm-build-python3 
 
-BuildRequires: python3 
+BuildRequires: python3-devel 
 
 
 %description
@@ -33,12 +35,10 @@ We call Patroni a 'template' because it is far from being a one-size-fits-all or
 plug-and-play replication system.
 It will have its own caveats. Use wisely. There are many ways to run
 high availability with PostgreSQL; for a list, see the PostgreSQL Documentation.
-It will have its own caveats. Use wisely. There are many ways to run
-high availability with PostgreSQL; for a list, see the PostgreSQL Documentation.
 
 %package tools
 Summary: A collection of tools included with Python 3
-Group: Development/Python3
+Group: Databases
 # No real need in python-base in this package
 %filter_from_requires /^python-base/d
 
@@ -46,19 +46,22 @@ Group: Development/Python3
 This package contains several tools included with Python 3
 
 %prep
-%setup
+%setup -n %name-%version
+
 
 %build
 %python3_build
 
+
 %install
+%python3_install patroni
 
 #set 
-set -x
+#set -x
 ls -lR
 mkdir -p %buildroot%python3_sitelibdir
 cp -r patroni %buildroot%python3_sitelibdir
-ls -lR %buildroot
+
 %pre
 
 %post
