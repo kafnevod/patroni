@@ -18,16 +18,23 @@ BuildArch: noarch
 
 BuildRequires(pre): rpm-build-python3 rpm-build-python3dist
 
-BuildRequires: python3 python-base
+BuildRequires: python3 
 
 
 %description
-Patroni is a template for you to create your own customized, high-availability solution using Python and - 
-for maximum accessibility - a distributed configuration store like ZooKeeper, etcd, Consul or Kubernetes. 
-Database engineers, DBAs, DevOps engineers, and SREs who are looking to quickly deploy HA PostgreSQL in the datacenter-or anywhere else-will hopefully find it useful.
+Patroni is a template for you to create your own customized,
+high-availability solution using Python and - for maximum accessibility -
+a distributed configuration store like ZooKeeper, etcd, Consul or Kubernetes.
+Database engineers, DBAs, DevOps engineers, and SREs who are looking to quickly
+deploy HA PostgreSQL in the datacenter-or anywhere else-will hopefully
+find it useful.
 
-We call Patroni a 'template' because it is far from being a one-size-fits-all or plug-and-play replication system. 
-It will have its own caveats. Use wisely. There are many ways to run high availability with PostgreSQL; for a list, see the PostgreSQL Documentation.
+We call Patroni a 'template' because it is far from being a one-size-fits-all or
+plug-and-play replication system.
+It will have its own caveats. Use wisely. There are many ways to run
+high availability with PostgreSQL; for a list, see the PostgreSQL Documentation.
+It will have its own caveats. Use wisely. There are many ways to run
+high availability with PostgreSQL; for a list, see the PostgreSQL Documentation.
 
 %package tools
 Summary: A collection of tools included with Python 3
