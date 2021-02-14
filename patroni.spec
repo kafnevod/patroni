@@ -2,6 +2,7 @@
 %define patroni_group   postgres
 %define patroni_confdir %_sysconfdir/%name
 %define patroni_home %patroni_confdir
+%define python3_sitelibdir /usr/lib/python3/site-packages/
 
 Name: patroni
 Version: 2.0.1
