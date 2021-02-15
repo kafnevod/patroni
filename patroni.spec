@@ -62,8 +62,9 @@ This package contains several tools included with Python 3
 
 
 %install
+cd patroni
 %python3_install 
-
+cd ..
 #set 
 #set -x
 #mkdir -p %buildroot%python3_sitelibdir
