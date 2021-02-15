@@ -73,10 +73,10 @@ install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/%name.cfg
 install -D -m 0755 %SOURCE3 %buildroot%_initrddir/patroni
 install -p -D -m 0644 %SOURCE4 %buildroot%_unitdir/%name.service
 install -p -D -m 0644 %SOURCE5 %buildroot%_unitdir/%{name}@.service
-install -p -D -m 0644 %SOURCE6 %_bindir/aws
-install -p -D -m 0644 %SOURCE7 %_bindir/patronictl
-install -p -D -m 0644 %SOURCE8 %_bindir/patroni_patroni
-install -p -D -m 0644 %SOURCE9 %_bindir/atroni_wale_restore
+install -p -D -m 0755 %SOURCE6 %_bindir/aws
+install -p -D -m 0755 %SOURCE7 %_bindir/patronictl
+install -p -D -m 0755 %SOURCE8 %_bindir/patroni_patroni
+install -p -D -m 0755 %SOURCE9 %_bindir/atroni_wale_restore
 
 %pre
 
