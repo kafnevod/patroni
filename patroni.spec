@@ -62,7 +62,7 @@ This package contains several tools included with Python 3
 
 
 %install
-%python3_install patroni
+%python3_install 
 
 #set 
 #set -x
