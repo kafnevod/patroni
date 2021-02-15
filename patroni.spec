@@ -66,10 +66,8 @@ set
 set -x
 pwd
 ls -lR
-
-cd patroni
 %python3_install 
-cd ..
+
 install -p -D -m 0644 %SOURCE1 %buildroot%patroni_confdir/%name.cfg
 install -p -D -m 0644 %SOURCE2 %buildroot%patroni_confdir/%name.cfg
 install -D -m 0755 %SOURCE3 %buildroot%_initrddir/patroni
