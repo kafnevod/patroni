@@ -28,7 +28,7 @@ BuildArch: noarch
 
 BuildRequires(pre): rpm-build-python3 
 
-BuildRequires: python3-devel python3-module-six
+BuildRequires: python3-devel python3-module-six psycopg2-binary
 
 
 %description
