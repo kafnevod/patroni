@@ -83,6 +83,7 @@ install -p -D -m 0755 %SOURCE9 %buildroot%_bindir/atroni_wale_restore
 
 %files
 %python3_sitelibdir/%name/
+%python3_sitelibdir/*egg-info
 %patroni_confdir/*
 %_bindir/*
 %_unitdir/*
