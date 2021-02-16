@@ -83,6 +83,10 @@ install -p -D -m 0755 %SOURCE9 %buildroot%_bindir/atroni_wale_restore
 
 %files
 %python3_sitelibdir/%name/
+%patroni_confdir/*
+%_bindir/*
+%_unitdir/*
+%_initrddir/*
 
 %changelog
 * Fri Feb 12 2021 Alexey Kostarev <kaf@altlinux.org> 2.0.1-alt1
